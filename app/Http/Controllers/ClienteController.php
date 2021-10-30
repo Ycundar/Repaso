@@ -7,7 +7,20 @@ use Illuminate\Http\Request;
 
 class ClienteController extends Controller
 {
-    //
+
+    public function index (){
+        //$categoria = Categoria::all ();
+        $cliente = Cliente:: select ('id','tp_doc','num_doc','nombres', 'apellidos','telefono','direccion','email','edo')
+        ->orderBy('nombres','asc')
+
+        ->get();
+
+        return[
+            "cat"=>$cliente
+        ];
+
+    }
+        //
     public function store (request $request){
         $cliente = new cliente ();
         $cliente -> tp_doc  = $request -> tp_doc;

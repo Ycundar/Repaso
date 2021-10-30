@@ -19,8 +19,17 @@ use App\Http\Controllers\MarcaController;
 Route::get('/', function () {
     return view('welcome');
 });
-
+// ROUTES  CATEGORIA--
+Route::get('/api/categoria', [CategoriaController::class,'index']);
 Route::post('/api/categoria/registrar', [CategoriaController::class,'store']);
+
+
+// rutas CLIENTE--
+Route::get('/api/cliente', [ClienteController::class,'index']);
 Route::post('/api/cliente/registrar', [ClienteController::class,'store']);
+
+
+// rutas MARCAS--
+Route::get('/api/marca', [MarcaController::class,'index']);
 Route::post('/api/marca/registrar', [MarcaController::class,'store']);
 
