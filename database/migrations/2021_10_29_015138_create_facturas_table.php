@@ -15,11 +15,12 @@ class CreateFacturasTable extends Migration
     {
         Schema::create('facturas', function (Blueprint $table) {
             $table->id();
-            $table->date('fec_fact');
+            $table->datetime('fecha');
             $table->integer('total');
-            $table->integer('Iva');
-            $table->foreignId('id_clientes')->constrained('clientes');
+            $table->float('iva');
+            $table->foreignId('id_cliente')->constrained('clientes');
             $table->timestamps();
+
         });
     }
 

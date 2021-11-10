@@ -17,9 +17,9 @@ class CreateDetFacturasTable extends Migration
             $table->id();
             $table->integer('precio');
             $table->integer('cant');
-            $table->integer('Total');
-            $table->foreignId('id_producto')->constrained('Productos');
-            $table->foreignId('id_factura')->constrained('Facturas');
+            $table->integer('total');
+            $table->foreignId('id_producto')->constrained('productos');
+            $table->foreignId('id_factura')->constrained('facturas');
             $table->timestamps();
         });
     }

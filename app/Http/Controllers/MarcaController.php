@@ -15,7 +15,7 @@ class MarcaController extends Controller
         ->get();
 
         return[
-            "cat"=>$marca
+            "marca"=>$marca
         ];
 
     }
@@ -40,4 +40,18 @@ public function destroy (Request $request){
     $marca-> delete();
 
 }
+//En este metodo:  lo que se hace es listar en el frontend
+public function getMarca (){
+     $marca = Marca:: select ('id','nombre')
+    ->where('estado',1)
+    ->get();
+
+    return[
+        "marc"=>$marca
+    ];
+
 }
+}
+
+
+
